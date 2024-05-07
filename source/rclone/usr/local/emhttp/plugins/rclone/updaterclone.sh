@@ -1,9 +1,11 @@
 #!/bin/bash
 
+latest=$(curl -Ls https://github.com/divyam234/rclone/releases/latest | grep -oP 'rclone v\d+\.\d+\.\d+' | grep -oP '\d+\.\d+\.\d+' | head -1)
+
 if [ "$1" = "2" ]; then
-   rcloneurl="https://beta.rclone.org/rclone-beta-latest-linux-amd64.zip"
+   rcloneurl="https://github.com/divyam234/rclone/releases/latest/download/rclone-v${version}-linux-amd64.zip"
 else
-   rcloneurl="https://downloads.rclone.org/rclone-current-linux-amd64.zip"
+   rcloneurl="https://github.com/divyam234/rclone/releases/latest/download/rclone-v${version}-linux-amd64.zip"
 fi;
 
 version=`rcloneorig --version | head -n 1`

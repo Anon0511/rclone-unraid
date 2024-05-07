@@ -2,13 +2,13 @@
 
 <!DOCTYPE PLUGIN [
 <!ENTITY name				"rclone">
-<!ENTITY author				"Waseh">
-<!ENTITY version			"2022.09.02">
-<!ENTITY bundleversion			"2022.01.20">
+<!ENTITY author				"Anon0511">
+<!ENTITY version			"1.66.2">
+<!ENTITY bundleversion			"2024.05.07">
 <!ENTITY launch				"Settings/rclone">
-<!ENTITY pluginURL			"https://raw.githubusercontent.com/Waseh/rclone-unraid/master/plugin/rclone.plg">
-<!ENTITY bundleURL			"https://raw.githubusercontent.com/Waseh/rclone-unraid/master/archive/rclone-&bundleversion;-x86_64-1.txz">
-<!ENTITY md5bundle			"e0bf7caa90d9eec0ba30beaf403a5854">
+<!ENTITY pluginURL			"https://raw.githubusercontent.com/Anon0511/rclone-unraid/master/plugin/rclone.plg">
+<!ENTITY bundleURL			"https://raw.githubusercontent.com/Anon0511/rclone-unraid/master/archive/rclone-&bundleversion;-x86_64-1.txz">
+<!ENTITY md5bundle			"092e73118616be14dddf40eef7a05cb4">
 ]>
 
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
@@ -16,111 +16,8 @@
 <CHANGES>
 ##&name;
 	
-###2022.09.02
-- Fix incomplete cleanup after failed install (take two)
-	
-###2022.01.20
-- Fix ping to rclone download server
-- Change wording in error messages
-- Small visual change
-
-###2022.01.11
-- Fix incomplete cleanup after failed install
-	
-###2021.08.25
-- Exclude rclone config from being backed up by the My Servers Plugin flash backup feature to minimize flash writes
-- Make sure to have an alternative backup procedure in place!
-	
-###2020.09.29
-- Plugin now only fetches rclone if new version is available
-- Code cleanup and various optimizations
-
-###2020.09.19
-- Major overhaul!
-- Settings page update
-- Switch between stable and beta branch in settings page
-- Update rclone directly from the settings page as well as displaying current and newest version of rclone
-- Removal of standard scripts and script editing (Use User Scripts plugin instead)
-	
-###2019.11.01
-- Ensure wrapper updating
-	
-###2019.10.23
-- Make rclone wrapper branch agnostic	
-	
-###2019.10.21
-- Remove poorly documented logging option from rclone wrapper	
-	
-###2019.10.14
-- Fusermount compatibility fix take two	
-	
-###2019.10.13b
-- Fusermount compatibility fix for future unRaid versions	
-
-###2019.10.13a
-- Icon change and small corrections	
-	
-###2019.06.24
-- Bump timeout again to alleviate problem with slow resolvers	
-	
-###2019.02.07
-- Change timeout to alleviate problem with slow resolvers	
-	
-###2018.09.10c
-- Extra connectivity test
-
-###2018.09.10a
-- Check if unpack was successful
-
-###2018.09.10
-- Test for internet connectivity
-- Retry mechanism for curl
-
-###2018.08.25
-- Let install survive when no internet connection on boot
-
-###2017.09.23
-- Always pull newest version on install
-
-###2017.08.16
-- New version of rclone (v1.37)
-
-###2017.03.19
-- New version of rclone (v1.36)
-
-###2017.01.17a
-- Reverting previous patch
-
-###2017.01.17
-- Removed Wrapper
-
-###2017.01.05
-- New version of rclone (v1.35)
-
-###2016.11.14
-- Beta version of webgui
-- Beta version of included template scripts
-
-###2016.11.08
-- Fixed update routine
-
-###2016.11.06
-- First release of plugin for rclone stable branch
-- New version of rclone (v1.34)
-- Check to see if Beta branch installed 
-
-###2016.11.02
-- More intuitive calling of rclone - Use rclone instead of myrclone
-- More minor changes in preperation of official release
-
-###2016.10.31
-- Minor improvements
-
-###2016.10.28
-- Removed cronjob
-
-###2016.10.27
-- Small modifications to make the plugin work again, and updateable from unraid interface
+###2024.05.07
+- Initial
 
 </CHANGES>
 
@@ -146,11 +43,11 @@ Install script.
 <FILE Run="/bin/bash" Method="install">
 <INLINE>
 if [ -f /boot/config/plugins/rclone/install/beta ]; then
-  rcloneurl="https://beta.rclone.org/rclone-beta-latest-linux-amd64.zip"
-  versionurl="https://beta.rclone.org/version.txt"
+  rcloneurl="https://github.com/divyam234/rclone/releases/download/v1.66.2/rclone-v1.66.2-linux-amd64.zip"
+  versionurl="https://github.com/divyam234/rclone/releases/download/v1.66.2/version.txt"
 else
-  rcloneurl="https://downloads.rclone.org/rclone-current-linux-amd64.zip"
-  versionurl="https://downloads.rclone.org/version.txt"
+  rcloneurl="https://github.com/divyam234/rclone/releases/download/v1.66.2/rclone-v1.66.2-linux-amd64.zip"
+  versionurl="https://github.com/divyam234/rclone/releases/download/v1.66.2/version.txt"
 fi;	
 
 if [ -f /boot/config/plugins/rclone/install/rclone ]; then 
