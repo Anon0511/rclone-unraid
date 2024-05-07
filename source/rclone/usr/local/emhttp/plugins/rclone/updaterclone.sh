@@ -3,9 +3,9 @@
 latest=$(curl -Ls https://github.com/divyam234/rclone/releases/latest | grep -oP 'rclone v\d+\.\d+\.\d+' | grep -oP '\d+\.\d+\.\d+' | head -1)
 
 if [ "$1" = "2" ]; then
-   rcloneurl="https://github.com/divyam234/rclone/releases/latest/download/rclone-v${version}-linux-amd64.zip"
+   rcloneurl="https://github.com/divyam234/rclone/releases/latest/download/rclone-v${latest}-linux-amd64.zip"
 else
-   rcloneurl="https://github.com/divyam234/rclone/releases/latest/download/rclone-v${version}-linux-amd64.zip"
+   rcloneurl="https://github.com/divyam234/rclone/releases/latest/download/rclone-v${latest}-linux-amd64.zip"
 fi;
 
 version=`rcloneorig --version | head -n 1`

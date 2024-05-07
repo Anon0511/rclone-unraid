@@ -42,12 +42,14 @@ Install script.
 -->
 <FILE Run="/bin/bash" Method="install">
 <INLINE>
+latest=$(curl -Ls https://github.com/divyam234/rclone/releases/latest | grep -oP 'rclone v\d+\.\d+\.\d+' | grep -oP '\d+\.\d+\.\d+' | head -1)
+
 if [ -f /boot/config/plugins/rclone/install/beta ]; then
-  rcloneurl="https://github.com/divyam234/rclone/releases/download/v1.66.2/rclone-v1.66.2-linux-amd64.zip"
-  versionurl="https://github.com/divyam234/rclone/releases/download/v1.66.2/version.txt"
+  rcloneurl="https://github.com/divyam234/rclone/releases/latest/download/rclone-v${latest}-linux-amd64.zip"
+  versionurl="https://github.com/divyam234/rclone/releases/latest/download/version.txt"
 else
-  rcloneurl="https://github.com/divyam234/rclone/releases/download/v1.66.2/rclone-v1.66.2-linux-amd64.zip"
-  versionurl="https://github.com/divyam234/rclone/releases/download/v1.66.2/version.txt"
+  rcloneurl="https://github.com/divyam234/rclone/releases/latest/download/rclone-v${latest}-linux-amd64.zip"
+  versionurl="https://github.com/divyam234/rclone/releases/latest/download/version.txt"
 fi;	
 
 if [ -f /boot/config/plugins/rclone/install/rclone ]; then 
