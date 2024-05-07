@@ -3,7 +3,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name				"rclone">
 <!ENTITY author				"Anon0511">
-<!ENTITY version			"1.66.2">
+<!ENTITY version			"2024.05.07">
 <!ENTITY bundleversion			"2024.05.07">
 <!ENTITY launch				"Settings/rclone">
 <!ENTITY pluginURL			"https://raw.githubusercontent.com/Anon0511/rclone-unraid/master/plugin/rclone.plg">
@@ -17,7 +17,8 @@
 ##&name;
 	
 ###2024.05.07
-- Initial
+- Initial changes
+- Fixes in adaption
 
 </CHANGES>
 
