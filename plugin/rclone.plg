@@ -8,7 +8,7 @@
 <!ENTITY launch				"Settings/rclone">
 <!ENTITY pluginURL			"https://raw.githubusercontent.com/Anon0511/rclone-unraid/master/plugin/rclone.plg">
 <!ENTITY bundleURL			"https://raw.githubusercontent.com/Anon0511/rclone-unraid/master/archive/rclone-&bundleversion;-x86_64-1.txz">
-<!ENTITY md5bundle			"825e8bf6a82cbd96fd2c27d91b7ef62d">
+<!ENTITY md5bundle			"43a0520b39beed37a6dc2b3244e752bf">
 ]>
 
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
