@@ -8,7 +8,7 @@
 <!ENTITY launch				"Settings/rclone">
 <!ENTITY pluginURL			"https://raw.githubusercontent.com/Anon0511/rclone-unraid/master/plugin/rclone.plg">
 <!ENTITY bundleURL			"https://raw.githubusercontent.com/Anon0511/rclone-unraid/master/archive/rclone-&bundleversion;-x86_64-1.txz">
-<!ENTITY md5bundle			"43a0520b39beed37a6dc2b3244e752bf">
+<!ENTITY md5bundle			"872f0e273c40092301d5048a8d20b838">
 ]>
 
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
@@ -66,12 +66,12 @@ rm -f /usr/sbin/rclone
 
 ping -q -c2 downloads.rclone.org >/dev/null || ping -q -c2 1.1.1.1 >/dev/null || ping -q -c2 8.8.8.8 >/dev/null
 if [ $? -eq 0 ]; then
-  current_version=`curl $versionurl`
+  current_version=`curl -L $versionurl`
   if [[ $version = $current_version ]]; then
     echo "Local rclone binary up-to-date"  
   else
     echo "Downloading and installing rclone"
-    curl --connect-timeout 15 --retry 3 --retry-delay 2 --retry-max-time 30 -o /boot/config/plugins/rclone/install/rclone.zip --create-dirs $rcloneurl
+    curl -L --connect-timeout 15 --retry 3 --retry-delay 2 --retry-max-time 30 -o /boot/config/plugins/rclone/install/rclone.zip --create-dirs $rcloneurl
     unzip -o -j "/boot/config/plugins/rclone/install/rclone.zip" "*/rclone" -d "/boot/config/plugins/rclone/install"
     rm -f /boot/config/plugins/rclone/install/*.zip
     cp /boot/config/plugins/rclone/install/rclone /usr/sbin/rcloneorig.new

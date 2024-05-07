@@ -18,7 +18,7 @@ then
   echo "-------------------------------------------------------------------"
   echo "Updating rclone"
   echo "-------------------------------------------------------------------"
-  curl --connect-timeout 15 --retry 3 --retry-delay 2 --retry-max-time 30 -o /boot/config/plugins/rclone/install/rclone.zip $rcloneurl
+  curl -L --connect-timeout 15 --retry 3 --retry-delay 2 --retry-max-time 30 -o /boot/config/plugins/rclone/install/rclone.zip $rcloneurl
   unzip -o -j "/boot/config/plugins/rclone/install/rclone.zip" "*/rclone" -d "/boot/config/plugins/rclone/install"
   rm -f /boot/config/plugins/rclone/install/*.zip
   cp /boot/config/plugins/rclone/install/rclone /usr/sbin/rcloneorig.new
